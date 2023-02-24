@@ -6,40 +6,26 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint ."
   },
   "dependencies": {
-    "launchdarkly-react-native-client-sdk": "^4.1.0",
-    "react": "17.0.1",
-    "react-native": "0.64.1"
+    "@react-native-picker/picker": "^2.2.1",
+    "launchdarkly-react-native-client-sdk": "^6.3.1",
+    "react": "^18.2.0",
+    "react-native": "0.70.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9",
-    "@babel/runtime": "^7.12.5",
-    "@react-native-community/eslint-config": "^2.0.0",
-    "@types/jest": "^26.0.20",
-    "@types/react-native": "^0.64.0",
-    "@types/react-test-renderer": "^16.9.2",
-    "babel-jest": "^26.6.3",
-    "eslint": "^7.14.0",
-    "jest": "^26.6.3",
-    "metro-react-native-babel-preset": "^0.64.0",
-    "react-test-renderer": "17.0.1",
-    "typescript": "^3.8.3"
-  },
-  "resolutions": {
-    "@types/react": "^17"
-  },
-  "jest": {
-    "preset": "react-native",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
+    "@babel/core": "^7.20.12",
+    "@babel/runtime": "^7.20.13",
+    "@react-native-community/eslint-config": "^3.2.0",
+    "@tsconfig/react-native": "2.0.3",
+    "@types/jest": "29.4.0",
+    "@types/react-native": "0.71.3",
+    "@types/react-test-renderer": "18.0.0",
+    "eslint": "^8.33.0",
+    "metro-react-native-babel-preset": "^0.75.0",
+    "prettier": "^2.8.4",
+    "react-test-renderer": "^18.2.0",
+    "typescript": "4.9.5"
   }
 }

@@ -1,24 +1,17 @@
 import React from 'react';
 import LDClient from 'launchdarkly-react-native-client-sdk';
-import {
-  Text,
-  View,
-  Button,
-  TextInput,
-  Alert,
-  StyleSheet,
-  Picker,
-} from 'react-native';
+import { Text, View, Button, TextInput, Alert, StyleSheet } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 
 type Props = {};
 
 type State = {
-  ldClient?: LDClient,
-  flagKey: string,
-  flagType: string,
+  ldClient?: LDClient;
+  flagKey: string;
+  flagType: string;
 };
 
-export default class App extends React.Component<Props, State> { 
+export default class App extends React.Component<Props, State> {
   constructor(props: {}) {
     super(props);
     this.state = {
@@ -37,11 +30,11 @@ export default class App extends React.Component<Props, State> {
         debugMode: true,
       };
 
-      let user = {key: 'user key'};
+      let user = { key: 'user key' };
 
       await client.configure(config, user);
       // eslint-disable-next-line react/no-did-mount-set-state
-      this.setState({ldClient: client});
+      this.setState({ ldClient: client });
     } catch (err) {
       console.error(err);
     }
@@ -56,9 +49,7 @@ export default class App extends React.Component<Props, State> {
       } else if (this.state.flagType === 'string') {
         res = await client.stringVariation(this.state.flagKey, '');
       } else if (this.state.flagType === 'int') {
-        res = await client.intVariation(this.state.flagKey, 0);
-      } else if (this.state.flagType === 'float') {
-        res = await client.floatVariation(this.state.flagKey, 0.0);
+        res = await client.numberVariation(this.state.flagKey, 0);
       } else if (this.state.flagType === 'json') {
         let obj = await client.jsonVariation(this.state.flagKey, {});
         res = JSON.stringify(obj);
@@ -72,21 +63,19 @@ export default class App extends React.Component<Props, State> {
     return (
       <View style={styles.container}>
         {/* eslint-disable-next-line react-native/no-inline-styles */}
-        <Text style={{fontWeight: 'bold'}}>
-          LaunchDarkly React Native Typescript Example
-        </Text>
+        <Text style={{ fontWeight: 'bold' }}>LaunchDarkly React Native Typescript Example</Text>
         <View>
           <Text>Feature Key:</Text>
           <TextInput
+            autoCapitalize="none"
             style={styles.input}
-            onChangeText={text => this.setState({flagKey: text})}
+            onChangeText={(text) => this.setState({ flagKey: text })}
             value={this.state.flagKey}
           />
           <Picker
             selectedValue={this.state.flagType}
-            onValueChange={(itemValue, itemIndex) =>
-              this.setState({flagType: itemValue})
-            }>
+            onValueChange={(itemValue, itemIndex) => this.setState({ flagType: itemValue })}
+          >
             <Picker.Item label="Boolean" value="bool" />
             <Picker.Item label="String" value="string" />
             <Picker.Item label="Integer" value="int" />
