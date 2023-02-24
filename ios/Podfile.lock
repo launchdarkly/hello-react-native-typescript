@@ -73,12 +73,12 @@ PODS:
     - FlipperKit/FlipperKitNetworkPlugin
   - fmt (6.2.1)
   - glog (0.3.5)
-  - LaunchDarkly (7.1.0):
-    - LaunchDarkly/Core (= 7.1.0)
-  - launchdarkly-react-native-client-sdk (6.3.1):
-    - LaunchDarkly (= 7.1.0)
+  - LaunchDarkly (8.0.0):
+    - LaunchDarkly/Core (= 8.0.0)
+  - launchdarkly-react-native-client-sdk (7.0.0):
+    - LaunchDarkly (= 8.0.0)
     - React-Core
-  - LaunchDarkly/Core (7.1.0):
+  - LaunchDarkly/Core (8.0.0):
     - LDSwiftEventSource (= 3.0.0)
   - LDSwiftEventSource (3.0.0)
   - libevent (2.1.12)
@@ -531,8 +531,8 @@ SPEC CHECKSUMS:
   FlipperKit: cbdee19bdd4e7f05472a66ce290f1b729ba3cb86
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
-  LaunchDarkly: 31da8b77e96cb744417208478bb5b24f35fd2491
-  launchdarkly-react-native-client-sdk: 0a0115b91b0fa4b0171eeacb166cdeebb00a7e16
+  LaunchDarkly: e73c26ce2fc2b719730e0dd38c9abe761e33287a
+  launchdarkly-react-native-client-sdk: b9c741124749ed9ad82e95768c8572004f22ff9e
   LDSwiftEventSource: 824ce51a4fa8e79498c9b67ae672bfa802bd7464
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
