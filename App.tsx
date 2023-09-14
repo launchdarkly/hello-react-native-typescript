@@ -16,7 +16,7 @@ export default class App extends React.Component<Props, State> {
     super(props);
     this.state = {
       ldClient: undefined,
-      flagKey: '',
+      flagKey: 'dev-test-flag',
       flagType: 'bool',
     };
   }
@@ -26,11 +26,11 @@ export default class App extends React.Component<Props, State> {
       let client = new LDClient();
 
       let config = {
-        mobileKey: 'YOUR_MOBILE_KEY',
+        mobileKey: 'your-mobile-key',
         debugMode: true,
       };
 
-      let user = { key: 'user key' };
+      let user = { kind: 'user', key: 'user key' };
 
       await client.configure(config, user);
       // eslint-disable-next-line react/no-did-mount-set-state
@@ -74,7 +74,7 @@ export default class App extends React.Component<Props, State> {
           />
           <Picker
             selectedValue={this.state.flagType}
-            onValueChange={(itemValue, itemIndex) => this.setState({ flagType: itemValue })}
+            onValueChange={(itemValue) => this.setState({ flagType: itemValue })}
           >
             <Picker.Item label="Boolean" value="bool" />
             <Picker.Item label="String" value="string" />
